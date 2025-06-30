@@ -1,0 +1,119 @@
+﻿﻿body {
+    /*background-color: #323232;*/
+    color: gray;
+    /*font-family:'Segoe UI';*/
+    font-family: 'Roboto Condensed';
+}
+
+h4 {
+    text-align: right;
+}
+
+p {
+    text-align: justify;
+    font-size: 14pt;
+    border: solid 1px;
+    margin: 22px;
+    padding: 11px 22px 33px 44px;
+}
+
+ol {
+    list-style-type: upper-roman;
+    /*list-style-type:;*/
+}
+
+.nesting-lvl-1 {
+    list-style-type: circle;
+}
+
+.nesting-lvl-2 {
+    list-style-type: "- ";
+}
+
+figure {
+    text-align: center;
+    font-style: italic;
+}
+
+a {
+    color: aliceblue;
+}
+
+    a:hover, a:hover:visited {
+        color: blue;
+    }
+
+    a:visited {
+        color: green;
+    }
+
+table {
+    border: solid 2px;
+    margin: 0 auto;
+    border-spacing: 0;
+}
+
+thead {
+    background-color: #6b5fb5;
+    border: solid 10px;
+    border-color: black;
+}
+
+th {
+    color: white;
+    border: solid 1px;
+    padding: 11px 33px;
+    border-top: solid 2px #aeaed3;
+    border-bottom: solid 2px #aeaed3;
+}
+
+td {
+    border: solid 1px;
+    border: solid 1px #aeaed3;
+    text-align: center;
+}
+
+.row-header {
+    /*https://www.w3schools.com/css/css_combinators.asp*/
+    /*background-color: #6b5fb5;*/
+    /*color: white;*/
+    text-align: left;
+}
+
+td[colspan="3"] {
+    text-align: center;
+    color: white;
+    background-color: #6b5fb5;
+}
+
+.table-first-header {
+    border-left: solid 2px #aeaed3;
+}
+
+.table-last-header {
+    border-right: solid 2px #aeaed3;
+}
+
+div {
+    border: solid 1px;
+    /*margin:22px 32px;*/ /*22px - верх/низ, 32px - лево/право*/
+    /*margin:22px 33px 44px;*/ /*22px - верх, 33px - лево/право 44px - низ*/
+    margin: 22px 33px 44px 55px; /*По часовой стрелке начиная сверху*/
+    /*margin-left:32px;
+	margin-right:12px;
+	margin-top:22px;
+	margin-bottom:32px;*/
+}
+
+table:hover {
+    box-shadow: 0px 0px 25px 25px lightgrey;
+    /*box-shadow: 10px 10px 10px 10px grey;*/
+}
+
+tr:hover {
+    box-shadow: inset 0px -5px 5px green;
+}
+
+td:hover {
+    box-shadow: initial 0 5px 5px blue;
+}
