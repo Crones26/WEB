@@ -1,0 +1,262 @@
+﻿﻿body
+{
+    background-image: url("bliss.jpg");
+    background-size: cover;
+    font-family: Tahoma;
+}
+
+.main_window
+{
+    /*border:solid 1px;*/
+    /*position:relative;
+	left:400px;
+	top:100px;*/
+    align-self: center;
+    width: 400px;
+    height: 360px;
+    background: rgb(236,233,216);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /*box-shadow: 0 0 0px 5px #0469EC;*/
+}
+
+#app_icon
+{
+    width: 24px;
+    height: 24px;
+}
+
+.title_bar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    background-image: linear-gradient( #77CCFF,
+    /*#4447E2,#4447E2,#4447E2, */
+    #0469EC,#0469EC,#0469EC, #0569FF,#0569FF,#0569FF );
+    box-shadow: inset 0px 0px 4px 1px #002195;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.title_bar_left_side
+{
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 0px darkblue;
+}
+
+.control_button, .control_button:disabled, .control_button:disabled:hover
+{
+    width: 28px;
+    height: 28px;
+    border: solid 1px white;
+    border-radius: 5px;
+    margin: 0px;
+    text-align: center;
+    padding: -15px;
+    background-image: linear-gradient(to bottom right, #55A1FF, #0025B5);
+    box-shadow: inset 3px 1px 3px 0px #77A1F5;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+    .control_button:hover
+    {
+        /*border-color:lightgray;*/
+        background-image: linear-gradient(to bottom right, #75C1FF, #2045D5);
+        box-shadow: inset 0px 0px 3px 3px #77A1F5;
+    }
+
+    .control_button:active
+    {
+        /*border-color:lightgray;*/
+        background-image: linear-gradient(to bottom right, #55A1CF, #0025B5);
+        box-shadow: inset 0px 0px 3px 3px #5781F5;
+    }
+
+    .control_button:disabled, .control_button:disabled:hover
+    {
+        color: lightgray;
+        border-color: lightgray;
+    }
+
+#close_button
+{
+    background-image: linear-gradient(to bottom right, #C97475,#FF3010);
+    box-shadow: inset 3px 1px 3px 1px #C49A9B;
+}
+
+    #close_button:hover
+    {
+        background-image: linear-gradient(to bottom right, #D98485,#FF3020);
+        box-shadow: inset 0px 0px 3px 3px #C49A9B;
+    }
+
+    #close_button:active
+    {
+        background-image: linear-gradient(to bottom right, #D95455,#FF3020);
+        box-shadow: inset 0px 0px 3px 3px #B48A8B;
+    }
+
+
+/*-------------------------------------------------------------------------*/
+
+.client-rect
+{
+    width: auto;
+    height: 312px;
+    display: block;
+}
+
+#main-area
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#bottom-border
+{
+    width: 100%;
+    height: 5px;
+    background-color: darkblue;
+    background-image: linear-gradient(to right, /* #001177CC, */ #0055BBFF,#001177CC)
+}
+
+#left-border
+{
+    width: 5px;
+    height: 320px;
+    /*background-color: darkblue;*/
+    background-image: linear-gradient(to right, #0022BBFF, #0055FFFF,#0022BBFF)
+    /*background-image:linear-gradient(to right, #000536C9, #0055FFFF,#0055AAFF)*/
+}
+
+#right-border
+{
+    width: 5px;
+    height: 320px;
+    background-color: darkblue;
+    background-image: linear-gradient(to right, #001177CC, #0055BBFF,#001177CC)
+}
+/* --------------------------------------------------------------------------------------- */
+
+#work-area
+{
+    width: 95%;
+    display: block;
+}
+
+.menu-bar, .display, .buttons
+{
+    width: 100%;
+}
+
+.display
+{
+    display: flex;
+    justify-content: center;
+}
+
+.menu-bar
+{
+    display: flex;
+    justify-content: left;
+}
+
+    .menu-bar > button
+    {
+        /*Для всех 'button', вложенных в блок 'menu-bar'*/
+        /*https://www.w3schools.com/css/css_combinators.asp*/
+        width: 50px;
+        height: 22px;
+        margin: 1px;
+        background: rgb(236,233,216);
+        border: none;
+    }
+
+        .menu-bar > button:hover
+        {
+            box-shadow: 1px 1px 0 0 grey;
+            background: rgb(246,243,226);
+        }
+
+        .menu-bar > button:active
+        {
+            box-shadow: inset 1px 1px 0 0 grey;
+            background: rgb(226,223,206);
+        }
+
+#text
+{
+    width: 93%;
+}
+
+input[type=text]
+{
+    text-align: right;
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: left;
+}
+
+    .buttons button
+    {
+        width: 50px;
+        height: 40px;
+        margin: 5px 10px;
+        /*border:solid 1px darkblue;
+		border-radius:5px;*/
+    }
+
+.memory-buttons
+{
+    /*border: solid 1px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .memory-buttons > button
+    {
+        color: red;
+    }
+
+    .memory-buttons > #square
+    {
+        width: 32px;
+        height: 32px;
+        /*box-shadow:inset 2px 2px 0px 0px grey;*/
+        border: inset 2px;
+        margin: 7px 10px;
+    }
+
+.main-block button
+{
+    margin: 5px;
+}
+
+.wide-buttons > button
+{
+    width: 85px;
+    color: red;
+}
+
+.digit-buttons
+{
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 40px 40px 40px 40px;
+    grid-gap: 10px;
+}
+
+    .digit-buttons button
+    {
+        color: darkblue;
+    }

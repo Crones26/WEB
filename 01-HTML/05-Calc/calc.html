@@ -1,0 +1,71 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Calc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main_window">
+        <div class="title_bar">
+            <div class="title_bar_left_side">
+                <img src="calc.ico" id="app_icon">
+                - Калькулятор
+            </div>
+            <div class="title_bar_right_side">
+                <input type="button" class="control_button" value="&#x1F5D5">
+                <input type="button" class="control_button" value="&#128470" disabled>
+                <input type="button" class="control_button" value="&#10006" id="close_button">
+            </div>
+        </div>
+        <div class="client-rect">
+            <div id="main-area">
+                <div id="left-border"></div>
+                <div id="work-area">
+                    <div class="menu-bar">
+                        <button>Edit</button>
+                        <button>View</button>
+                        <button>Help</button>
+                    </div>
+                    <div class="display">
+                        <input type="text" id="text" name="text" value="0." />
+                    </div>
+                    <div class="buttons">
+                        <div class="memory-buttons">
+                            <div id="square"></div>
+                            <button>MC</button>
+                            <button>MR</button>
+                            <button>MS</button>
+                            <button>M+</button>
+                        </div>
+                        <div class="main-block">
+                            <div class="wide-buttons">
+                                <button>Backspace</button>
+                                <button>CE</button>
+                                <button>C</button>
+                            </div>
+                            <div class="digit-buttons">
+                                <button>7</button>
+                                <button>8</button>
+                                <button>9</button>
+                                <button>4</button>
+                                <button>5</button>
+                                <button>6</button>
+                                <button>1</button>
+                                <button>2</button>
+                                <button>3</button>
+                                <button>0</button>
+                                <button>+/-</button>
+                                <button>.</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="right-border"></div>
+            </div>
+            <div id="bottom-border"></div>
+        </div>
+    </div>
+</body>
+</html>
