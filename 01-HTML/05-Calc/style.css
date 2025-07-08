@@ -169,8 +169,6 @@
 
     .menu-bar > button
     {
-        /*Для всех 'button', вложенных в блок 'menu-bar'*/
-        /*https://www.w3schools.com/css/css_combinators.asp*/
         width: 50px;
         height: 22px;
         margin: 1px;
@@ -211,13 +209,10 @@ input[type=text]
         width: 50px;
         height: 40px;
         margin: 5px 10px;
-        /*border:solid 1px darkblue;
-		border-radius:5px;*/
     }
 
 .memory-buttons
 {
-    /*border: solid 1px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -232,7 +227,6 @@ input[type=text]
     {
         width: 32px;
         height: 32px;
-        /*box-shadow:inset 2px 2px 0px 0px grey;*/
         border: inset 2px;
         margin: 7px 10px;
     }
