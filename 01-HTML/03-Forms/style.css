@@ -1,0 +1,31 @@
+﻿﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+body
+{
+    font-family: Roboto Condensed;
+}
+
+textarea
+{
+    resize: none;
+    width: 500px;
+    height: 150px;
+}
+
+fieldset
+{
+    width: 474px;
+}
+
+.EULA
+{
+    width: 500px;
+    height: 300px;
+    border: solid 1px;
+    overflow: scroll;
+    text-align: justify;
+}
+
+div
+{
+    margin: 25px;
+}

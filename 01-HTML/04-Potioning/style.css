@@ -1,0 +1,23 @@
+﻿﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body
+{
+    background-color: lightblue;
+    font-family: Roboto;
+}
+
+h1
+{
+    position: sticky;
+    top: 0px;
+    background-color: lightblue;
+}
+
+.logo
+{
+    width: 300px;
+    height: 250px;
+    position: fixed;
+    z-index: -1;
+    left: 200px;
+    top: 150px;
+}
