@@ -1,57 +1,194 @@
-﻿let curr = "";
-let prev = null;
-let op = null;
-let justComputed = false;
-let mem = 0;
+﻿// Основные переменные
+let curr = "";              // Текущее введённое значение
+let prev = null;            // Предыдущее значение (левый операнд)
+let op = null;              // Оператор (+, -, *, /)
+let justComputed = false;   // Флаг, что только что было вычисление
+let mem = 0;                // Память
 
+// Получаем дисплей (экран)
 const display = document.getElementById("text");
-const btns = document.querySelectorAll("button");
 
-btns.forEach(b => b.addEventListener("click", () => handle(b.innerText, b.id)));
+// Получаем все кнопки
+const buttons = document.querySelectorAll("button");
 
-function handle(v, id) {
+// Назначаем обработчик на каждую кнопку
+buttons.forEach(function (button)
+{
+    button.addEventListener("click", function ()
+    {
+        let value = button.innerText;
+        let id = button.id;
+        handleClick(value, id);
+    });
+});
+
+// Основная функция обработки клика
+function handleClick(value, id)
+{
+    // Игнорируем ячейку памяти
     if (id === "mem-box") return;
-    if (v >= "0" && v <= "9" || v === ".") {
-        if (justComputed) curr = v === "." ? "0." : v, justComputed = false;
-        else if (!(v === "." && curr.includes("."))) curr += v;
-        update();
+
+    // Цифры и точка
+    if ((value >= "0" && value <= "9") || value === ".")
+    {
+        if (justComputed)
+        {
+            // Если только что было вычисление — начинаем заново
+            if (value === ".")
+            {
+                curr = "0.";
+            } else {
+                curr = value;
+            }
+            justComputed = false;
+        } else {
+            // Не даём ввести две точки
+            if (!(value === "." && curr.includes(".")))
+            {
+                curr += value;
+            }
+        }
+        updateDisplay();
     }
-    else if (v === "Backspace") { curr = curr.slice(0, -1); update(); }
-    else if (v === "C") { curr = ""; prev = op = null; update("0"); }
-    else if (v === "CE") { curr = ""; update("0"); }
-    else if (v === "+/-") { curr = String(parseFloat(curr) * -1); update(); }
-    else if (v === "sqrt") { curr = String(Math.sqrt(parseFloat(curr) || 0)); update(); justComputed = true; }
-    else if (v === "1/x") { curr = String(1 / (parseFloat(curr) || 1e-100)); update(); justComputed = true; }
-    else if (v === "MC") { mem = 0; document.getElementById("mem-box").innerText = ""; }
-    else if (v === "MR") { curr = String(mem); update(); }
-    else if (v === "MS") { mem = parseFloat(curr) || 0; document.getElementById("mem-box").innerText = "M"; }
-    else if (v === "M+") { mem += parseFloat(curr) || 0; document.getElementById("mem-box").innerText = "M"; }
-    else if (v === "%" && prev !== null && op) {
-        curr = String(prev * (parseFloat(curr) || 0) / 100); update();
+
+    // Удаление символа
+    else if (value === "Backspace")
+    {
+        curr = curr.slice(0, -1);
+        updateDisplay();
     }
-    else if (["+", "-", "*", "/"].includes(v)) {
-        if (prev !== null && op && curr !== "") {
-            prev = calc(prev, curr, op);
-        } else prev = parseFloat(curr) || 0;
-        op = v; curr = ""; justComputed = false;
+
+    // Очистить всё
+    else if (value === "C")
+    {
+        curr = "";
+        prev = null;
+        op = null;
+        updateDisplay("0");
     }
-    else if (v === "=") {
-        if (op && prev !== null && curr !== "") {
-            curr = String(calc(prev, curr, op));
-            update();
-            prev = null; op = null; justComputed = true;
+
+    // Очистить только текущее значение
+    else if (value === "CE")
+    {
+        curr = "";
+        updateDisplay("0");
+    }
+
+    // Смена знака
+    else if (value === "+/-")
+    {
+        let num = parseFloat(curr);
+        curr = String(num * -1);
+        updateDisplay();
+    }
+
+    // Квадратный корень
+    else if (value === "sqrt")
+    {
+        let num = parseFloat(curr);
+        curr = String(Math.sqrt(num || 0));
+        updateDisplay();
+        justComputed = true;
+    }
+
+    // Обратное значение
+    else if (value === "1/x")
+    {
+        let num = parseFloat(curr);
+        curr = String(1 / (num || 1e-100));
+        updateDisplay();
+        justComputed = true;
+    }
+
+    // Очистить память
+    else if (value === "MC")
+    {
+        mem = 0;
+        document.getElementById("mem-box").innerText = "";
+    }
+
+    // Прочитать из памяти
+    else if (value === "MR")
+    {
+        curr = String(mem);
+        updateDisplay();
+    }
+
+    // Сохранить в память
+    else if (value === "MS")
+    {
+        mem = parseFloat(curr) || 0;
+        document.getElementById("mem-box").innerText = "M";
+    }
+
+    // Прибавить к памяти
+    else if (value === "M+")
+    {
+        mem += parseFloat(curr) || 0;
+        document.getElementById("mem-box").innerText = "M";
+    }
+
+    // Процент от предыдущего
+    else if (value === "%" && prev !== null && op)
+    {
+        let percentValue = parseFloat(curr) || 0;
+        curr = String(prev * percentValue / 100);
+        updateDisplay();
+    }
+
+    // Операторы + - * /
+    else if (value === "+" || value === "-" || value === "*" || value === "/")
+    {
+        if (prev !== null && op !== null && curr !== "")
+        {
+            prev = calculate(prev, curr, op);
+        } else
+        {
+            prev = parseFloat(curr) || 0;
+        }
+        op = value;
+        curr = "";
+        justComputed = false;
+    }
+
+    // Равно
+    else if (value === "=")
+    {
+        if (op !== null && prev !== null && curr !== "")
+        {
+            curr = String(calculate(prev, curr, op));
+            updateDisplay();
+            prev = null;
+            op = null;
+            justComputed = true;
         }
     }
 }
 
-function calc(a, b, o) {
-    a = parseFloat(a); b = parseFloat(b);
-    if (o === "+") return a + b;
-    if (o === "–" || o === "-") return a - b;
-    if (o === "*") return a * b;
-    if (o === "/") return b ? a / b : "Error";
+// Функция вычислений
+function calculate(a, b, operator)
+{
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    if (operator === "+") return a + b;
+    if (operator === "-" || operator === "–") return a - b;
+    if (operator === "*") return a * b;
+    if (operator === "/")
+    {
+        if (b === 0) return "Error";
+        else return a / b;
+    }
 }
 
-function update(val) {
-    display.value = val === undefined ? (curr || "0") : val;
+// Обновление дисплея
+function updateDisplay(val)
+{
+    if (val === undefined)
+    {
+        if (curr === "") display.value = "0";
+        else display.value = curr;
+    } else {
+        display.value = val;
+    }
 }
