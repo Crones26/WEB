@@ -1,0 +1,39 @@
+﻿﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Rhombus</title>
+    <style>
+        body
+        {
+            background-color: black;
+            color: #00FF00;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 32px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>10
+    <h1>Rhombus</h1>
+    <pre>
+    <script>
+		let n = Number(prompt("Введите размер фигуры:"));
+		//document.write(typeof (n));
+		document.writeln();
+		for (let i = 0; i < n * 2; i++)
+		{
+			for (let j = 0; j < n * 2; j++)
+			{
+				if (i + n == j || j + n == i) document.write('\\');
+				else if (i == n - 1 - j || i - n + j == n * 2 - 1) document.write('/');
+				else document.write('&nbsp;');
+			}
+			document.writeln();
+		}
+</script>
+	</pre>
+</body>
+</html>

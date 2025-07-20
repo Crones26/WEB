@@ -102,9 +102,6 @@
         box-shadow: inset 0px 0px 3px 3px #B48A8B;
     }
 
-
-/*-------------------------------------------------------------------------*/
-
 .client-rect
 {
     width: auto;
@@ -142,7 +139,6 @@
     background-color: darkblue;
     background-image: linear-gradient(to right, #001177CC, #0055BBFF,#001177CC)
 }
-/* --------------------------------------------------------------------------------------- */
 
 #work-area
 {
@@ -169,6 +165,7 @@
 
     .menu-bar > button
     {
+        /*Для всех 'button', вложенных в блок 'menu-bar'*/
         width: 50px;
         height: 22px;
         margin: 1px;
@@ -208,17 +205,34 @@ input[type=text]
     {
         width: 50px;
         height: 40px;
-        margin: 5px 10px;
+        margin: 5px;
+        border: solid 1px darkblue;
+        border-radius: 5px;
+        /*box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
+        box-shadow: inset 0 -3px 5px 1px lightgrey;
+        /*box-shadow: inset 0px -3px 5px 1px lightgrey;*/
     }
+
+        .buttons button:hover
+        {
+            background-color: lightgray;
+            box-shadow: inset 0px 0px 2px 1px #FFAA00;
+        }
+
+        .buttons button:active
+        {
+            box-shadow: inset 0px 0px 0px 1px grey;
+        }
 
 .memory-buttons
 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50px;
+    grid-template-rows: 40px 40px 40px 40px;
+    grid-gap: 10px;
 }
 
-    .memory-buttons > button
+    .memory-buttons > button, .operational-buttons > button
     {
         color: red;
     }
@@ -227,6 +241,7 @@ input[type=text]
     {
         width: 32px;
         height: 32px;
+        /*box-shadow:inset 2px 2px 0px 0px grey;*/
         border: inset 2px;
         margin: 7px 10px;
     }
@@ -236,10 +251,21 @@ input[type=text]
     margin: 5px;
 }
 
-.wide-buttons > button
+.wide-buttons
 {
-    width: 85px;
-    color: red;
+    margin: 0 15px;
+}
+
+    .wide-buttons > button
+    {
+        width: 85px;
+        color: red;
+    }
+
+.digits-and-operations
+{
+    display: flex;
+    justify-content: left;
 }
 
 .digit-buttons
@@ -248,9 +274,25 @@ input[type=text]
     grid-template-columns: 50px 50px 50px;
     grid-template-rows: 40px 40px 40px 40px;
     grid-gap: 10px;
+    /*margin: 0 15px;*/
+    margin-left: 10px;
 }
 
     .digit-buttons button
     {
         color: darkblue;
     }
+
+.operational-buttons, .results
+{
+    display: grid;
+    grid-template-columns: 50px;
+    grid-template-rows: 40px 40px 40px 40px;
+    grid-gap: 10px;
+    margin-left: 10px;
+}
+
+/*.buttons button
+{
+	box-shadow:inset 0 0 3px 3px grey;
+}*/
