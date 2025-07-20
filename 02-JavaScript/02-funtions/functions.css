@@ -1,0 +1,174 @@
+﻿body
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 20px;
+    background-image: linear-gradient(to right, wheat, lightblue);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+input,
+button
+{
+    font-size: 20px;
+    padding: 6px 10px;
+    margin: 5px;
+    border: 1px solid #777;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+    input[type="number"]
+    {
+        width: 320px;
+    }
+
+    input[type="checkbox"]
+    {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
+
+button
+{
+    cursor: pointer;
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 0 #aaa;
+}
+
+    button:hover
+    {
+        background-color: #d0d0d0;
+    }
+
+#header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#delay
+{
+    width: 58px;
+    height: 25px;
+}
+
+#switchBackground
+{
+    width: 32px;
+    height: 32px;
+    margin: 24px;
+    background-size: 31px 31px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+img[src='img/sun.png']
+{
+    filter: brightness(0) invert(1);
+}
+
+/* Светлая и тёмная тема */
+.light
+{
+    background: #d8d8d8;
+    color: #323232;
+}
+
+    .light #switchBackground
+    {
+        background-image: url("img/moon.png");
+    }
+
+.dark
+{
+    background: #323232;
+    color: #d8d8d8;
+}
+
+    .dark #switchBackground
+    {
+        background-image: url("img/sun.png");
+        filter: brightness(0) invert(1);
+    }
+
+#photo-container
+{
+    border: solid 1px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+    #photo-container img
+    {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+#clock
+{
+    text-align: center;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+    #clock h3
+    {
+        margin: 10px 0;
+    }
+
+#display
+{
+    border: solid 1px;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.time-block
+{
+    border: solid 3px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.time-unit
+{
+    font-size: 48px;
+    color: rgb(200, 0, 0);
+    width: 148px;
+    height: 148px;
+    background-color: Highlight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.time-marker
+{
+    border: solid 1px;
+    background-color: darkred;
+    color: aliceblue;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 6px;
+}

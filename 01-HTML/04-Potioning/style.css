@@ -1,15 +1,37 @@
-﻿﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
 body
 {
-    background-color: lightblue;
-    font-family: Roboto;
+    background-image: url('img/bliss.jpg'); /* если картинка в img/bliss.jpg */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+    margin: 0;
+    padding: 30px;
 }
 
 h1
 {
     position: sticky;
-    top: 0px;
-    background-color: lightblue;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 12px 24px;
+    margin: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #999;
+    box-shadow: 0 2px 5px gray;
+}
+
+p, ol
+{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 900px;
+    line-height: 1.6;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 .logo
@@ -20,4 +42,5 @@ h1
     z-index: -1;
     left: 200px;
     top: 150px;
+    opacity: 0.25;
 }

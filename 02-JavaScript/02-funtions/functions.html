@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="functions.css">
+    <link rel="icon" href="img/sun.png" type="image/x-icon">
+    <title>Functions</title>
+</head>
+<body class="light">
+    <div id="header">
+        <div style="width:88%">
+            Header
+            <span id="mouse"></span>
+        </div>
+        <label for="delay">Delay</label>
+        <input type="number" id="delay" name="delay" value="3" min="1" max="10" />
+        <div id="switchBackground" onclick="SwitchBackground()"></div>
+        <!--<img src="img/moon.png" alt="Switch background image" id="switchBackground" onclick="SwitchBackground()">-->
+    </div>
+    <hr>
+    <!-- --------------------------------------------------------- -->
+    <div id="full-time"></div>
+    <div id="clock">
+        <h3>Clock</h3>
+        <div id="time-of-day">
+            <span id="hours"></span>:
+            <span id="minutes"></span>:
+            <span id="seconds"></span>
+        </div>
+        <div id="current-date">
+            <span id="year"></span>.
+            <span id="month"></span>.
+            <span id="day"></span>
+        </div>
+        <div id="weekday">
+
+        </div>
+        <div>
+            <input type="checkbox" name="show-date" id="show-date" />
+            <label for="show-date">Показать дату</label>
+            <input type="checkbox" name="show-weekday" id="show-weekday" />
+            <label for="show-weekday">Показать день недели</label>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------- -->
+    <div id="countdownTime">
+        <h2>Countdown timer</h2>
+        <input type="date" id="target-date" value="2025-07-26" />
+        <input type="time" id="target-time" value="20:00" />
+        <input type="button" id="btn-start" value="Start" />
+    </div>
+    <div>
+        <div id="target-date-value"></div>
+        <div id="target-time-value"></div>
+        <div id="duration"></div>
+        <div id="timestamp"></div>
+    </div>
+    <div id="display">
+        <div class="time-block">
+            <div id="hours-unit" class="time-unit"></div>
+            <div id="hours-marker" class="time-marker">Hours</div>
+        </div>
+        <div class="time-block">
+            <div id="minutes-unit" class="time-unit"></div>
+            <div id="minutes-marker" class="time-marker">Minutes</div>
+        </div>
+        <div class="time-block">
+            <div id="seconds-unit" class="time-unit"></div>
+            <div id="seconds-marker" class="time-marker">Seconds</div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------- -->
+    <hr>
+    <h2>Functions</h2>
+    <input type="number" name="base" id="base" placeholder="Основание степени">
+    <input type="number" name="exponent" id="exponent" placeholder="Показатель степени">
+    <input type="number" name="power" id="power" placeholder="Степень" readonly>
+    <button onclick="calculatePower()">Вычислить</button>
+    <hr>
+    <input type="file" onchange="setImage()" id="image-file">
+    <br>
+    <div id="photo-container">
+        <img alt="Фотография" title="Фото" id="photo">
+    </div>
+    <script src="functions.js"></script>
+</body>
+</html>

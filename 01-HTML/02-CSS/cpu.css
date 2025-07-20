@@ -1,15 +1,18 @@
-﻿﻿body {
-    /*background-color: #323232;*/
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body
+{
     color: gray;
-    /*font-family:'Segoe UI';*/
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-h4 {
+h4
+{
     text-align: right;
 }
 
-p {
+p
+{
     text-align: justify;
     font-size: 14pt;
     border: solid 1px;
@@ -17,49 +20,58 @@ p {
     padding: 11px 22px 33px 44px;
 }
 
-ol {
+ol
+{
     list-style-type: upper-roman;
-    /*list-style-type:;*/
 }
 
-.nesting-lvl-1 {
+.nesting-lvl-1
+{
     list-style-type: circle;
 }
 
-.nesting-lvl-2 {
+.nesting-lvl-2
+{
     list-style-type: "- ";
 }
 
-figure {
+figure
+{
     text-align: center;
     font-style: italic;
 }
 
-a {
+a
+{
     color: aliceblue;
 }
 
-    a:hover, a:hover:visited {
+    a:hover,
+    a:hover:visited
+    {
         color: blue;
     }
 
-    a:visited {
+    a:visited
+    {
         color: green;
     }
 
-table {
+table
+{
     border: solid 2px;
     margin: 0 auto;
     border-spacing: 0;
 }
 
-thead {
+thead
+{
     background-color: #6b5fb5;
-    border: solid 10px;
-    border-color: black;
+    border: solid 10px black;
 }
 
-th {
+th
+{
     color: white;
     border: solid 1px;
     padding: 11px 33px;
@@ -67,53 +79,51 @@ th {
     border-bottom: solid 2px #aeaed3;
 }
 
-td {
-    border: solid 1px;
+td
+{
     border: solid 1px #aeaed3;
     text-align: center;
 }
 
-.row-header {
-    /*https://www.w3schools.com/css/css_combinators.asp*/
-    /*background-color: #6b5fb5;*/
-    /*color: white;*/
+.row-header
+{
     text-align: left;
 }
 
-td[colspan="3"] {
+td[colspan="3"]
+{
     text-align: center;
     color: white;
     background-color: #6b5fb5;
 }
 
-.table-first-header {
+.table-first-header
+{
     border-left: solid 2px #aeaed3;
 }
 
-.table-last-header {
+.table-last-header
+{
     border-right: solid 2px #aeaed3;
 }
 
-div {
+div
+{
     border: solid 1px;
-    /*margin:22px 32px;*/ /*22px - верх/низ, 32px - лево/право*/
-    /*margin:22px 33px 44px;*/ /*22px - верх, 33px - лево/право 44px - низ*/
-    margin: 22px 33px 44px 55px; /*По часовой стрелке начиная сверху*/
-    /*margin-left:32px;
-	margin-right:12px;
-	margin-top:22px;
-	margin-bottom:32px;*/
+    margin: 22px 33px 44px 55px;
 }
 
-table:hover {
+table:hover
+{
     box-shadow: 0px 0px 25px 25px lightgrey;
-    /*box-shadow: 10px 10px 10px 10px grey;*/
 }
 
-tr:hover {
+tr:hover
+{
     box-shadow: inset 0px -5px 5px green;
 }
 
-td:hover {
-    box-shadow: initial 0 5px 5px blue;
+td:hover
+{
+    box-shadow: 0 5px 5px blue;
 }
