@@ -1,4 +1,4 @@
-// JavaScript source code
+п»ї// JavaScript source code
 function calculatePower()
 {
 	let base = Number(document.getElementById('base').value);
@@ -80,9 +80,10 @@ document.body.onload = function tick_timer()
 	document.getElementById("current-date").style.visibility = document.getElementById("show-date").checked ? "visible" : "hidden";
 	document.getElementById("weekday").style.visibility = document.getElementById("show-weekday").checked ? "visible" : "hidden";
 
-	setTimeout(tick_timer, 100);	//Функция setTimeout(function,delay) вызывает функцию 'function' с задержкой 'delay'.
+	setTimeout(tick_timer, 100);	//Р¤СѓРЅРєС†РёСЏ setTimeout(function,delay) РІС‹Р·С‹РІР°РµС‚ С„СѓРЅРєС†РёСЋ 'function' СЃ Р·Р°РґРµСЂР¶РєРѕР№ 'delay'.
 }
-function addLeadingZero(number) {
+function addLeadingZero(number)
+{
 	return number < 10 ? "0" + number : number;
 }
 
@@ -107,29 +108,29 @@ function tickCountdown()
 	if (!document.getElementById("target-time").disabled) return;
 	let now = new Date();
 	console.log(`now timezoneOffset:\t${now.getTimezoneOffset()}`);
-	//Controls - это элементы интерфейса.
+	//Controls - СЌС‚Рѕ СЌР»РµРјРµРЅС‚С‹ РёРЅС‚РµСЂС„РµР№СЃР°.
 	let targetDateControl = document.getElementById("target-date");
 	let targetTimeControl = document.getElementById("target-time");
 	let targetDate = targetDateControl.valueAsDate;
 	let targetTime = targetTimeControl.valueAsDate;
 
-	//Выравниваем часовой пояс:
+	//Р’С‹СЂР°РІРЅРёРІР°РµРј С‡Р°СЃРѕРІРѕР№ РїРѕСЏСЃ:
 	targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
 	targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
 
-	//Приводим дату в целевом времени к выбранной дате:
+	//РџСЂРёРІРѕРґРёРј РґР°С‚Сѓ РІ С†РµР»РµРІРѕРј РІСЂРµРјРµРЅРё Рє РІС‹Р±СЂР°РЅРЅРѕР№ РґР°С‚Рµ:
 	targetTime.setFullYear(targetDate.getFullYear());
 	targetTime.setMonth(targetDate.getMonth());
 	targetTime.setDate(targetDate.getDate());
 
-	//Определяем промежуток времени до указанной даты:
-	let duration = targetTime - now;    //Разность дат вычисляется в формате Timestamp
+	//РћРїСЂРµРґРµР»СЏРµРј РїСЂРѕРјРµР¶СѓС‚РѕРє РІСЂРµРјРµРЅРё РґРѕ СѓРєР°Р·Р°РЅРЅРѕР№ РґР°С‚С‹:
+	let duration = targetTime - now;    //Р Р°Р·РЅРѕСЃС‚СЊ РґР°С‚ РІС‹С‡РёСЃР»СЏРµС‚СЃСЏ РІ С„РѕСЂРјР°С‚Рµ Timestamp
 	document.getElementById("duration").innerHTML = duration;
-	//Timestamp - это количество миллисекунд от 1 января 1970.
+	//Timestamp - СЌС‚Рѕ РєРѕР»РёС‡РµСЃС‚РІРѕ РјРёР»Р»РёСЃРµРєСѓРЅРґ РѕС‚ 1 СЏРЅРІР°СЂСЏ 1970.
 	let timestamp = Math.trunc(duration / 1000);
 	document.getElementById("timestamp").innerHTML = timestamp;
 
-	//Отображаем целевую дату/время и промежуток на странице:
+	//РћС‚РѕР±СЂР°Р¶Р°РµРј С†РµР»РµРІСѓСЋ РґР°С‚Сѓ/РІСЂРµРјСЏ Рё РїСЂРѕРјРµР¶СѓС‚РѕРє РЅР° СЃС‚СЂР°РЅРёС†Рµ:
 	document.getElementById("target-date-value").innerHTML = targetDate;
 	document.getElementById("target-time-value").innerHTML = targetTime;
 
